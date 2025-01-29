@@ -404,6 +404,41 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# User Configuration
+#
+
+#
+# Wifi STA Configuration
+#
+
+#
+# STA Mode Configuration
+#
+CONFIG_ESP_WIFI_AP_SSID="otherapssid"
+CONFIG_ESP_WIFI_AP_PASSWD="otherappasswd"
+CONFIG_ESP_MAXIMUM_RETRY=5
+# CONFIG_ESP_WIFI_AUTH_OPEN is not set
+# CONFIG_ESP_WIFI_AUTH_WEP is not set
+# CONFIG_ESP_WIFI_AUTH_WPA_PSK is not set
+CONFIG_ESP_WIFI_AUTH_WPA2_PSK=y
+# CONFIG_ESP_WIFI_AUTH_WPA_WPA2_PSK is not set
+# CONFIG_ESP_WIFI_AUTH_WPA3_PSK is not set
+# CONFIG_ESP_WIFI_AUTH_WPA2_WPA3_PSK is not set
+# CONFIG_ESP_WIFI_AUTH_WAPI_PSK is not set
+# end of Wifi STA Configuration
+
+#
+# ESP MQTT Configuration
+#
+
+#
+# MQTT Configuration
+#
+CONFIG_BROKER_URL=""
+# end of ESP MQTT Configuration
+# end of User Configuration
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y
