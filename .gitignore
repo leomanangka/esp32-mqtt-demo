@@ -4,3 +4,4 @@
 .ccls
 .cache
 sdkconfig.esp32dev.old
+compile_commands.json
