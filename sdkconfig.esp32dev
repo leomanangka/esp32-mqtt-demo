@@ -434,7 +434,7 @@ CONFIG_ESP_WIFI_AUTH_WPA2_PSK=y
 #
 # MQTT Configuration
 #
-CONFIG_BROKER_URL=""
+CONFIG_BROKER_URL="broker-url"
 # end of ESP MQTT Configuration
 # end of User Configuration
 
