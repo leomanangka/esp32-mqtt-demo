@@ -408,15 +408,19 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 
 #
-# Wifi STA Configuration
+# Wifi Configuration
 #
 
 #
 # STA Mode Configuration
 #
-CONFIG_ESP_WIFI_AP_SSID="otherapssid"
-CONFIG_ESP_WIFI_AP_PASSWD="otherappasswd"
+CONFIG_ESP_WIFI_SSID="network name"
+CONFIG_ESP_WIFI_SSID_PASSWD="network name password"
 CONFIG_ESP_MAXIMUM_RETRY=5
+# CONFIG_ESP_WPA3_SAE_PWE_HUNT_AND_PECK is not set
+# CONFIG_ESP_WPA3_SAE_PWE_HASH_TO_ELEMENT is not set
+CONFIG_ESP_WPA3_SAE_PWE_BOTH=y
+CONFIG_ESP_WIFI_PW_ID=""
 # CONFIG_ESP_WIFI_AUTH_OPEN is not set
 # CONFIG_ESP_WIFI_AUTH_WEP is not set
 # CONFIG_ESP_WIFI_AUTH_WPA_PSK is not set
@@ -425,7 +429,7 @@ CONFIG_ESP_WIFI_AUTH_WPA2_PSK=y
 # CONFIG_ESP_WIFI_AUTH_WPA3_PSK is not set
 # CONFIG_ESP_WIFI_AUTH_WPA2_WPA3_PSK is not set
 # CONFIG_ESP_WIFI_AUTH_WAPI_PSK is not set
-# end of Wifi STA Configuration
+# end of Wifi Configuration
 
 #
 # ESP MQTT Configuration
