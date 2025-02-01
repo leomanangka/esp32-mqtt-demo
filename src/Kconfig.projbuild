@@ -1,19 +1,19 @@
 menu "User Configuration"
 
-  menu "Wifi STA Configuration"
+  menu "Wifi Configuration"
     comment "STA Mode Configuration"
 
-    config ESP_WIFI_AP_SSID
-      string "Wifi STA SSID"
-      default "otherapssid"
+    config ESP_WIFI_SSID
+      string "Wifi SSID"
+      default "network name"
       help
         SSID (network name) for STA to connect to.
 
-    config ESP_WIFI_AP_PASSWD
-      string "Wifi AP password"
-      default "otherappasswd"
+    config ESP_WIFI_SSID_PASSWD
+      string "Wifi SSID password"
+      default "network name password"
       help
-        Wifi SSID (network name) password.
+        Wifi SSID (network name) password (WPA or WPA2) for STA to connect.
 
     config ESP_MAXIMUM_RETRY
       int "Maximum retry"
@@ -22,6 +22,27 @@ menu "User Configuration"
         Set maximum retry value to prevent the station to continuously
         attempting to reconnect to the access point (AP) when the AP doesn't
         exist.
+
+    choice ESP_WIFI_SAE_MODE
+      prompt "WPA3 SAE mode selection"
+      default ESP_WPA3_SAE_PWE_BOTH
+      help
+        Select mode for SAE as Hunt and Peck, H2E or both.
+
+      config ESP_WPA3_SAE_PWE_HUNT_AND_PECK
+        bool "HUNT AND PECK"
+      config ESP_WPA3_SAE_PWE_HASH_TO_ELEMENT
+        bool "H2E"
+      config ESP_WPA3_SAE_PWE_BOTH
+        bool "BOTH"
+    endchoice
+
+    config ESP_WIFI_PW_ID
+      string "PASSWORD IDENTIFIER"
+      depends on ESP_WPA3_SAE_PWE_HASH_TO_ELEMENT || ESP_WPA3_SAE_PWE_BOTH
+      default ""
+      help
+        password identifier for SAE H2E
 
     choice ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD
       prompt "Wifi scan auth mode threshold"
