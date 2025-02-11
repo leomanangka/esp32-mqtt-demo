@@ -77,11 +77,29 @@ menu "User Configuration"
   menu "ESP MQTT Configuration"
     comment "MQTT Configuration"
 
-    config BROKER_URL
+    config MQTT_BROKER_URL
       string "Broker URL"
-      default "broker-url"
+      default "mqtt://10.10.10.1"
       help
         URL of the broker to connect.
+
+    config MQTT_BROKER_PORT
+      int "MQTT Port"
+      default 1883
+      help
+        Port of the MQTT to connect.
+
+    config MQTT_AUTH_USERNAME
+      string "MQTT authentication Username"
+      default "alien"
+      help
+        Username authentication for MQTT broker.
+
+    config MQTT_AUTH_PASSWD
+      string "MQTT authentication Password"
+      default "auth_password"
+      help
+        Password authentication for MQTT broker.
 
   endmenu
 endmenu
