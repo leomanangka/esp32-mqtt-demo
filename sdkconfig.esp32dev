@@ -438,7 +438,10 @@ CONFIG_ESP_WIFI_AUTH_WPA2_PSK=y
 #
 # MQTT Configuration
 #
-CONFIG_BROKER_URL="broker-url"
+CONFIG_MQTT_BROKER_URL="mqtt://10.10.10.1"
+CONFIG_MQTT_BROKER_PORT=1883
+CONFIG_MQTT_AUTH_USERNAME="alien"
+CONFIG_MQTT_AUTH_PASSWD="auth_password"
 # end of ESP MQTT Configuration
 # end of User Configuration
 
